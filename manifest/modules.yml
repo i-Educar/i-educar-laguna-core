@@ -1,0 +1,129 @@
+# Manifesto de módulos — Laguna PE-77/2026 × i-Educar 2.12
+core:
+  repo: https://github.com/i-Educar/i-educar
+  branch: "2.12"
+  php: ">=8.3"
+  laravel: "13"
+
+modules:
+  - tr: "4.x"
+    name: exportacao-unificada
+    composer: buriti/i-educar-exportacao-unificada-package
+    path: packages/buriti/i-educar-exportacao-unificada-package
+    repo: https://github.com/i-Educar/i-educar-exportacao-unificada-package
+    onda: 0
+    required_for_poc: true
+
+  - tr: "5.3"
+    name: escolar-aderencia
+    composer: buriti/i-educar-escolar-aderencia-package
+    path: packages/buriti/i-educar-escolar-aderencia-package
+    repo: https://github.com/i-Educar/i-educar-escolar-aderencia-package
+    onda: 1
+    required_for_poc: true
+
+  - tr: "5.4"
+    name: transporte-escolar-v2
+    composer: buriti/i-educar-transporte-escolar-v2
+    path: packages/buriti/i-educar-transporte-escolar-v2
+    repo: https://github.com/i-Educar/i-educar-transporte-escolar-v2-package
+    onda: 1
+    required_for_poc: true
+
+  - tr: "5.8"
+    name: pre-matricula-digital
+    composer: portabilis/pre-matricula-digital
+    path: packages/portabilis/pre-matricula-digital
+    repo: https://github.com/portabilis/pre-matricula-digital
+    note: Adaptar (não criar pacote Buriti novo)
+    onda: 1
+    required_for_poc: true
+
+  - tr: "5.10"
+    name: educacenso-import
+    composer: buriti/i-educar-educacenso-import-package
+    path: packages/buriti/i-educar-educacenso-import-package
+    repo: https://github.com/JaderGabriel/i-educar-educacenso-import-package
+    onda: 1
+    required_for_poc: true
+
+  - tr: "5.1"
+    name: servidor-educacional
+    composer: buriti/i-educar-servidor-educacional-package
+    path: packages/buriti/i-educar-servidor-educacional-package
+    repo: https://github.com/i-Educar/i-educar-servidor-educacional-package
+    onda: 2
+    required_for_poc: true
+
+  - tr: "5.2"
+    name: alimentacao-escolar
+    composer: buriti/i-educar-alimentacao-escolar-package
+    path: packages/buriti/i-educar-alimentacao-escolar-package
+    repo: https://github.com/i-Educar/i-educar-alimentacao-escolar-package
+    onda: 2
+    required_for_poc: true
+
+  - tr: "5.15"
+    name: contratacoes-temporarias
+    composer: buriti/i-educar-contratacoes-temporarias-package
+    path: packages/buriti/i-educar-contratacoes-temporarias-package
+    repo: https://github.com/i-Educar/i-educar-contratacoes-temporarias-package
+    onda: 2
+    required_for_poc: true
+
+  - tr: "5.11"
+    name: horario-automatico
+    composer: buriti/i-educar-horario-automatico-package
+    path: packages/buriti/i-educar-horario-automatico-package
+    repo: https://github.com/i-Educar/i-educar-horario-automatico-package
+    onda: 2
+    required_for_poc: true
+
+  - tr: "5.12"
+    name: eventos-formacao
+    composer: buriti/i-educar-eventos-formacao-package
+    path: packages/buriti/i-educar-eventos-formacao-package
+    repo: https://github.com/i-Educar/i-educar-eventos-formacao-package
+    onda: 2
+    required_for_poc: true
+
+  - tr: "5.7"
+    name: almoxarifado-escolar
+    composer: buriti/i-educar-almoxarifado-escolar-package
+    path: packages/buriti/i-educar-almoxarifado-escolar-package
+    repo: https://github.com/i-Educar/i-educar-almoxarifado-escolar-package
+    onda: 2
+    required_for_poc: true
+
+  - tr: "5.9"
+    name: atendimento-estudante
+    composer: buriti/i-educar-atendimento-estudante-package
+    path: packages/buriti/i-educar-atendimento-estudante-package
+    repo: https://github.com/i-Educar/i-educar-atendimento-estudante-package
+    onda: 2
+    required_for_poc: true
+
+  - tr: "5.5"
+    name: biblioteca
+    composer: buriti/i-educar-biblioteca-package
+    path: packages/buriti/i-educar-biblioteca-package
+    repo: https://github.com/i-Educar/i-educar-biblioteca-package
+    onda: 2
+    required_for_poc: true
+
+  - tr: "5.6"
+    name: solicitacao-servicos
+    composer: buriti/i-educar-solicitacao-servicos-package
+    path: packages/buriti/i-educar-solicitacao-servicos-package
+    repo: https://github.com/i-Educar/i-educar-solicitacao-servicos-package
+    onda: 2
+    required_for_poc: true
+
+  - tr: "5.13+5.14"
+    name: apps-api
+    composer: buriti/i-educar-apps-api-package
+    path: packages/buriti/i-educar-apps-api-package
+    repo: https://github.com/i-Educar/i-educar-apps-api-package
+    onda: 3
+    required_for_poc: true
+    note: API única; UI/lojas fora do monorepo
