@@ -43,9 +43,11 @@ Ver [`manifest/modules.yml`](./manifest/modules.yml) e [`manifest/repos.md`](./m
 | 5.8 | Pré-matrícula | Adaptar [Portabilis](https://github.com/portabilis/pre-matricula-digital) / fork Serventec |
 | 5.10 | Educacenso import | Espelho Buriti / JaderGabriel (import) + Portabilis educacenso |
 
-### Em construção (Onda 2+)
+### Onda 2 — motores entregues
 
-Alimentação, servidor, ACT, horário, eventos, almoxarifado, atendimento, biblioteca, solicitação, apps-api — todos sob [github.com/i-Educar](https://github.com/i-Educar).
+Alimentação, almoxarifado, servidor, ACT, horário, eventos, atendimento, biblioteca, solicitação e **apps-api** (com [roadmap Android](https://github.com/i-Educar/i-educar-apps-api-package/blob/main/docs/ROADMAP-ANDROID.md)) — sob [github.com/i-Educar](https://github.com/i-Educar).
+
+**i-Diário:** https://github.com/i-Educar/i-diario (branch `laguna-docs`).
 
 ## Layout esperado no monorepo
 
@@ -59,7 +61,8 @@ i-educar/
 │   │   ├── i-educar-educacenso-import-package/
 │   │   └── … (demais TR)
 │   └── portabilis/
-│       └── pre-matricula-digital/
+│       ├── pre-matricula-digital/
+│       └── i-diario/
 ├── packages/plug-and-play.json
 ├── docker-compose.yml
 └── .env
@@ -73,7 +76,8 @@ Padrão técnico dos pacotes Buriti: ver docs no monorepo (`PADRAO-PACOTE-2.12.m
 | ---: | --- | --- |
 | 0 | Export ≥3 formatos + ambiente com escolas/turmas/alunos | Finalizada |
 | 1 | 5.3 / 5.8 / 5.4 / 5.10 com evidência ≥85% | Finalizada (motores + matrizes; ensaio UI no roteiro R1) |
-| 2–4 | Ver ordem de desenvolvimento no monorepo | Pendente |
+| 2 | Trilhas A/B/C + apps-api | Motores entregues (`docs/onda-2/STATUS.md`) |
+| 3–4 | Apps Sanctum/OpenAPI + ensaio PoC | Pendente |
 
 ## Licença
 
