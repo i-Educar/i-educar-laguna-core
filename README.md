@@ -49,6 +49,12 @@ Alimentação, almoxarifado, servidor, ACT, horário, eventos, atendimento, bibl
 
 **i-Diário:** https://github.com/i-Educar/i-diario (branch `laguna-docs`).
 
+### Onda 3 — Apps API
+
+Sanctum (`familia`|`professor`), endpoints reais filhos/frequência/notas/turmas, OpenAPI e handoff lojas:
+https://github.com/i-Educar/i-educar-apps-api-package/tree/main/docs/onda-3
+
+
 ## Layout esperado no monorepo
 
 ```text
@@ -77,7 +83,8 @@ Padrão técnico dos pacotes Buriti: ver docs no monorepo (`PADRAO-PACOTE-2.12.m
 | 0 | Export ≥3 formatos + ambiente com escolas/turmas/alunos | Finalizada |
 | 1 | 5.3 / 5.8 / 5.4 / 5.10 com evidência ≥85% | Finalizada (motores + matrizes; ensaio UI no roteiro R1) |
 | 2 | Trilhas A/B/C + apps-api | Motores entregues (`docs/onda-2/STATUS.md`) |
-| 3–4 | Apps Sanctum/OpenAPI + ensaio PoC | Pendente |
+| 3 | Apps Sanctum/OpenAPI/handoff 5.13–5.14 | Finalizada (ver apps-api `docs/onda-3/`) |
+| 4 | Endurecimento + ensaio PoC | Pendente |
 
 ## Licença
 
