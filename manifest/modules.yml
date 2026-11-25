@@ -1,9 +1,21 @@
 # Manifesto de módulos — Laguna PE-77/2026 × i-Educar 2.12
+# Fonte canônica espelhada do monorepo: packages/buriti (CatalogoModulos + REPOS-IEDUCAR-ORG.md)
+# Atualizado: 2026-11-25
+
 core:
   repo: https://github.com/i-Educar/i-educar
   branch: "2.12"
   php: ">=8.3"
   laravel: "13"
+  database: postgresql
+  cache: redis
+
+setup:
+  comando: laguna:setup
+  povoar: laguna:povoar-cidade
+  check: laguna:check
+  pacote: buriti/i-educar-laguna-ambiente-package
+  ui_docs: packages/buriti/docs/UI-MODULOS-LAGUNA.md
 
 modules:
   - tr: "4.x"
@@ -13,6 +25,7 @@ modules:
     repo: https://github.com/i-Educar/i-educar-exportacao-unificada-package
     onda: 0
     required_for_poc: true
+    comandos: [exportacao:demo, exportacao:demo-criticos]
 
   - tr: "5.3"
     name: escolar-aderencia
@@ -21,6 +34,7 @@ modules:
     repo: https://github.com/i-Educar/i-educar-escolar-aderencia-package
     onda: 1
     required_for_poc: true
+    comandos: [escolar:onda1-demo]
 
   - tr: "5.4"
     name: transporte-escolar-v2
@@ -29,6 +43,8 @@ modules:
     repo: https://github.com/i-Educar/i-educar-transporte-escolar-v2-package
     onda: 1
     required_for_poc: true
+    comandos: [transporte:simula, transporte:passagem-empenho-demo]
+    rotas: [/transporte-escolar]
 
   - tr: "5.8"
     name: pre-matricula-digital
@@ -44,6 +60,7 @@ modules:
     composer: buriti/i-educar-educacenso-import-package
     path: packages/buriti/i-educar-educacenso-import-package
     repo: https://github.com/JaderGabriel/i-educar-educacenso-import-package
+    note: Ainda no usuário JaderGabriel — espelhar na org i-Educar quando possível
     onda: 1
     required_for_poc: true
 
@@ -62,6 +79,8 @@ modules:
     repo: https://github.com/i-Educar/i-educar-alimentacao-escolar-package
     onda: 2
     required_for_poc: true
+    comandos: [alimentacao:demo]
+    rotas: [/alimentacao-escolar]
 
   - tr: "5.15"
     name: contratacoes-temporarias
@@ -70,6 +89,8 @@ modules:
     repo: https://github.com/i-Educar/i-educar-contratacoes-temporarias-package
     onda: 2
     required_for_poc: true
+    comandos: [act:demo]
+    rotas: [/contratacoes-temporarias]
 
   - tr: "5.11"
     name: horario-automatico
@@ -78,6 +99,8 @@ modules:
     repo: https://github.com/i-Educar/i-educar-horario-automatico-package
     onda: 2
     required_for_poc: true
+    comandos: [horario:demo]
+    rotas: [/horario-automatico]
 
   - tr: "5.12"
     name: eventos-formacao
@@ -86,6 +109,8 @@ modules:
     repo: https://github.com/i-Educar/i-educar-eventos-formacao-package
     onda: 2
     required_for_poc: true
+    comandos: [eventos:demo]
+    rotas: [/eventos-formacao]
 
   - tr: "5.7"
     name: almoxarifado-escolar
@@ -94,6 +119,8 @@ modules:
     repo: https://github.com/i-Educar/i-educar-almoxarifado-escolar-package
     onda: 2
     required_for_poc: true
+    comandos: [almoxarifado:demo]
+    rotas: [/almoxarifado-escolar]
 
   - tr: "5.9"
     name: atendimento-estudante
@@ -102,6 +129,8 @@ modules:
     repo: https://github.com/i-Educar/i-educar-atendimento-estudante-package
     onda: 2
     required_for_poc: true
+    comandos: [atendimento:demo]
+    rotas: [/atendimento-estudante]
 
   - tr: "5.5"
     name: biblioteca
@@ -110,6 +139,8 @@ modules:
     repo: https://github.com/i-Educar/i-educar-biblioteca-package
     onda: 2
     required_for_poc: true
+    comandos: [biblioteca:demo]
+    rotas: [/biblioteca-escolar]
 
   - tr: "5.6"
     name: solicitacao-servicos
@@ -118,6 +149,19 @@ modules:
     repo: https://github.com/i-Educar/i-educar-solicitacao-servicos-package
     onda: 2
     required_for_poc: true
+    comandos: [solicitacao:demo]
+    rotas: [/solicitacao-servicos]
+
+  - tr: "5.16"
+    name: busca-ativa
+    composer: buriti/i-educar-busca-ativa-package
+    path: packages/buriti/i-educar-busca-ativa-package
+    repo: null
+    note: Presente no monorepo; publicar na org i-Educar (repo ainda sem push org)
+    onda: 2
+    required_for_poc: true
+    comandos: [busca-ativa:demo, busca-ativa:detectar]
+    rotas: [/busca-ativa]
 
   - tr: "5.13+5.14"
     name: apps-api
@@ -126,4 +170,24 @@ modules:
     repo: https://github.com/i-Educar/i-educar-apps-api-package
     onda: 3
     required_for_poc: true
-    note: API única; UI/lojas fora do monorepo
+    note: API única; UI/lojas fora do monorepo · governança Onda 5
+    comandos: [apps-api:suspender-usuario, apps-api:bloquear-municipio]
+    rotas: [/apps-api]
+
+  - tr: infra
+    name: laguna-ambiente
+    composer: buriti/i-educar-laguna-ambiente-package
+    path: packages/buriti/i-educar-laguna-ambiente-package
+    repo: https://github.com/i-Educar/i-educar-laguna-ambiente-package
+    onda: 0
+    required_for_poc: true
+    note: Admin check, setup, BuritiUi (topo/lateral), painel /painel
+    comandos: [laguna:setup, laguna:check, laguna:povoar-cidade]
+    rotas: [/laguna-ambiente]
+
+extras:
+  - name: i-diario
+    path: packages/portabilis/i-diario
+    repo: https://github.com/i-Educar/i-diario
+    branch: laguna-docs
+    note: Integração via API/SSO — não compartilha schema com o core
