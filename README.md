@@ -84,7 +84,7 @@ Padrão técnico dos pacotes Buriti: ver docs no monorepo (`PADRAO-PACOTE-2.12.m
 | 1 | 5.3 / 5.8 / 5.4 / 5.10 com evidência ≥85% | Finalizada (motores + matrizes; ensaio UI no roteiro R1) |
 | 2 | Trilhas A/B/C + apps-api | Motores entregues (`docs/onda-2/STATUS.md`) |
 | 3 | Apps Sanctum/OpenAPI/handoff 5.13–5.14 | Finalizada (ver apps-api `docs/onda-3/`) |
-| 4 | Endurecimento + ensaio PoC | Pendente |
+| 4 | Endurecimento + ensaio PoC | MVP ( no monorepo + alimentação/transporte/apps/export) |
 
 ## Licença
 
